@@ -1,0 +1,16 @@
+# логи — не коммитим
+logs/
+*.log
+
+# tmux resurrect-сейвы
+resurrect/
+
+# мусор ОС/редакторов
+.DS_Store
+*.swp
+*~
+*.bak
+*.bak.*
+
+# архивы
+*.zip
