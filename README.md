@@ -6,6 +6,13 @@
 
 ![RED-TMUX: pentest-сессия с вкладками, промптом с датой и статус-баром gruvbox](img/1.png)
 
+## Установка
+
+```
+git clone https://github.com/5yn7hp0w3r/RED-TMUX ~/RED-TMUX
+cd ~/RED-TMUX
+./install.sh
+```
 ## Зачем
 
 tmux-logging, pipe-pane и script пишут сырой поток с управляющими последовательностями. Когда включены zsh-autosuggestions и подсветка, строка команды перерисовывается на каждое нажатие. Обычный `cat /etc/passwd` в таком логе выглядит так (`^[` обозначает байт Esc):
@@ -73,14 +80,6 @@ set -g @tmux-gruvbox 'dark'   # dark | dark256 | light
 ```
 
 `dark` для truecolor (включён по умолчанию), `dark256` для терминала без truecolor, `light` светлый. После смены нажмите `prefix + I` (если плагин ещё не ставился) и `Alt+r`, чтобы перечитать конфиг.
-
-## Установка
-
-```
-git clone https://github.com/5yn7hp0w3r/RED-TMUX ~/RED-TMUX
-cd ~/RED-TMUX
-./install.sh
-```
 
 Без симлинков. Скрипт создаёт `~/logs`, ставит TPM, копирует `tmux.conf` в `~/.tmux.conf` (бинды, мышь, gruvbox, автосейв) и дописывает лог в конец `~/.zshrc` между маркерами `# >>> RED-TMUX >>>`. Оригиналы сохраняются в бэкап (`.bak.<дата>`), повторный запуск заменяет свой блок, а не плодит копии.
 
